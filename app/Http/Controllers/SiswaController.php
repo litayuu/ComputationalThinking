@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Konsep;
 use App\Models\Materi;
 use App\Models\Answer;
+use Intervention\Image\Gd\Commands\InsertCommand;
 
 class SiswaController extends Controller
 {
@@ -28,8 +29,36 @@ class SiswaController extends Controller
     public function answer_save (Request $request, $id) {
         $this->validate($request, [
             'jawaban' => 'required',
-            'score' => 'required',
+            // 'score' => 'required',
         ]);
+
+        $cek = Konsep::where('id', $id)->first();
+        $score = '';
+        if ($cek != null) {
+            $jawaban = $cek[strtolower($request->jawaban)];
+            if ($jawaban == $cek->kunci) {
+                $score = 'benar';
+            }else{
+                $score = 'salah';  
+            }
+
+        }
+
+
+        $insert = Answer::create([
+            'id_soal' => $id,
+            'jawaban' => $request->jawaban,
+            'score' => $score,
+        ]);
+
+        if ($insert) {
+            Session()->flash('alert-success', 'Jawaban anda benar');
+            return redirect('/siswa/true');
+        }else{
+            Session()->flash('alert-danger', "Jawaban anda salah!");
+            return redirect('/siswa/false')->withInput();
+        }
+
 
         // $id = Answer::findOrFail($id->id);
 
@@ -47,20 +76,20 @@ class SiswaController extends Controller
         //     return redirect('/siswa/false')->withInput();
         // }
 
-        try {
-            $data = new Answer;
-            $data->id_soal = $request->id_soal;
-            $data->jawaban = $request->jawaban;
-            $data->score = $request->score;
-            $data->save();
-            // dd($data);
+        // try {
+        //     $data = new Answer;
+        //     $data->id_soal = $request->id_soal;
+        //     $data->jawaban = $request->jawaban;
+        //     $data->score = $request->score;
+        //     $data->save();
+        //     // dd($data);
 
-            Session()->flash('alert-success', 'Jawaban anda benar');
-            return redirect('/siswa/true');
-        } catch (\Exception $e) {
-            Session()->flash('alert-danger', $e->getMessage());
-            return redirect('/siswa/false')->withInput();
-        }
+        //     Session()->flash('alert-success', 'Jawaban anda benar');
+        //     return redirect('/siswa/true');
+        // } catch (\Exception $e) {
+        //     Session()->flash('alert-danger', $e->getMessage());
+        //     return redirect('/siswa/false')->withInput();
+        // }
     }
 
     public function materi_siswa () {
