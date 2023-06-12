@@ -40,7 +40,7 @@
         <div class="container mx-auto py-0 flex justify-center">
             <div class="w-full py-0 px-5 space-y-10">                     
                 
-                <div class="overflow-hidden py-5 flex flex-col justify-center items-center rounded-xl bg-orange-FF7F09">
+                <div class="overflow-hidden py-5 flex flex-col justify-center items-center">
                     <div class="px-6 font-sans text-white">
                         <h2 class="font-bold text-center md:text-4xl text-xl">
                             Jawabanmu Benar
@@ -48,10 +48,10 @@
                     </div>
                     <div class="md:px-6 px-1 py-2 font-sans text-white md:text-left text-center">
                         <p class="text-lg py-1 font-bold border-b-2 border-orange-FF7F09">
-                            {{ $post->kunci }}
+                            {{-- {{ $post->kunci }} --}}
                         </p>
                         <p class="text-lg py-1">
-                            {!! $post->keterangan !!}
+                            {{-- {!! $post->keterangan !!} --}}
                         </p>
                     </div>
                 </div>

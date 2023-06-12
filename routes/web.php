@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TrueController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\KonsepController;
 use App\Http\Controllers\Controller;
@@ -41,7 +42,7 @@ Route::group(['middleware' => ['auth']], function() {
     });  
     Route::get('/siswa/true', function () {
         return view('siswa/true');
-    });  
+    });
 
     Route::group(['middleware' => ['cek_login:guru']], function () {
         Route::get('/guru/materi', [GuruController::class, 'materi_guru']);
@@ -57,7 +58,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::resource('guru', GuruController::class);
     });
 
-    Route::group(['middleware' => ['cek_login:siswa']], function () {
+    Route::group(['middleware' => ['cek_login:siswa']], function () {          
         Route::get('/siswa/list_materi', [SiswaController::class, 'materi_siswa']);
         Route::get('/siswa/materi_post/{id}', [SiswaController::class, 'materi_show_siswa']);
     
