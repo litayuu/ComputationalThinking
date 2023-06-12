@@ -25,28 +25,12 @@ class SiswaController extends Controller
         return view('siswa.konsep_post', ['post' => $post]);
     }
 
-    public function answer_save (Request $request, $id) {
+    public function answer_save (Request $request) {
         $this->validate($request, [
             'jawaban' => 'required',
             'score' => 'required',
         ]);
-
-        // $id = Answer::findOrFail($id->id);
-
-        // $id = Answer::create([
-        //     'id_soal'     => $request->id_soal,
-        //     'jawaban'     => $request->jawaban,
-        //     'score'       => $request->score
-        // ]);
-
-        // if($id){
-        //     Session()->flash('alert-success', 'Jawaban anda benar');
-        //     return redirect('/siswa/true');
-        // }else{
-        //     Session()->flash('alert-danger', 'Jawaban anda salah');
-        //     return redirect('/siswa/false')->withInput();
-        // }
-
+        
         try {
             $data = new Answer;
             $data->id_soal = $request->id_soal;

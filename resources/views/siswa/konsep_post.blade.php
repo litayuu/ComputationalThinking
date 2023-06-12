@@ -58,25 +58,25 @@
                         
                         <div class="relative z-0 w-full mb-6 group">
                             <div class="flex items-center mb-4 space-x-2">
-                                <input id="jawaban" type="radio" name="jawaban" value="{{ old('A') }}" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
+                                <input id="jawaban" type="radio" name="jawaban" value="{{ $post->id }}" {{ old('jawaban') == $post->id ? 'selected' : '' }} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
                                 <label for="jawaban" class="w-full py-4 ml-2 text-lg font-sans text-white">
                                     A. {{ $post->a }}
                                 </label>
                             </div>
                             <div class="flex items-center mb-4 space-x-2">
-                                <input id="jawaban" type="radio" name="jawaban" value="{{ old('B') }}" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
+                                <input id="jawaban" type="radio" name="jawaban" value="{{ $post->id }}" {{ old('jawaban') == $post->id ? 'selected' : '' }} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
                                 <label for="jawaban" class="w-full py-4 ml-2 text-lg font-sans text-white">
                                     B. {{ $post->b }}
                                 </label>
                             </div>
                             <div class="flex items-center mb-4 space-x-2">
-                                <input id="jawaban" type="radio" name="jawaban" value="{{ old('C') }}" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
+                                <input id="jawaban" type="radio" name="jawaban" value="{{ $post->id }}" {{ old('jawaban') == $post->id ? 'selected' : '' }} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
                                 <label for="jawaban" class="w-full py-4 ml-2 text-lg font-sans text-white">
                                     C. {{ $post->c }}
                                 </label>
                             </div>
                             <div class="flex items-center mb-4 space-x-2">
-                                <input id="jawaban" type="radio" name="jawaban" value="{{ old('D') }}" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
+                                <input id="jawaban" type="radio" name="jawaban" value="{{ $post->id }}" {{ old('jawaban') == $post->id ? 'selected' : '' }} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300">
                                 <label for="jawaban" class="w-full py-4 ml-2 text-lg font-sans text-white">
                                     D. {{ $post->d }}
                                 </label>
