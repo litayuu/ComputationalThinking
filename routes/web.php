@@ -49,11 +49,17 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/guru/materi/materi_add', [GuruController::class, 'materi_create']);
         Route::post('/guru/materi/materi_add', [GuruController::class, 'materi_save']);
         Route::get('/guru/materi/materi_post/{id}', [GuruController::class, 'materi_show_guru']);
+        Route::get('/guru/materi/materi_delete/{id}', [GuruController::class, 'materi_delete']);
+        Route::get('/guru/materi/materi_edit/{id}', [GuruController::class, 'materi_edit']);
+        Route::post('/guru/materi/materi_update/{id}', [GuruController::class, 'materi_update']);
     
         Route::get('/guru/konsep', [GuruController::class, 'konsep_guru']);
         Route::get('/guru/konsep/konsep_add', [GuruController::class, 'konsep_create']);
         Route::post('/guru/konsep/konsep_add', [GuruController::class, 'konsep_save']);
         Route::get('/guru/konsep/konsep_post/{id}', [GuruController::class, 'konsep_show_guru']);
+        Route::get('/guru/konsep/konsep_delete/{id}', [GuruController::class, 'konsep_delete']);
+        Route::get('/guru/konsep/konsep_edit/{id}', [GuruController::class, 'konsep_edit']);
+        Route::post('/guru/konsep/konsep_update/{id}', [GuruController::class, 'konsep_update']);
 
         Route::resource('guru', GuruController::class);
     });

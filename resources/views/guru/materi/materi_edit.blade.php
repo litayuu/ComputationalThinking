@@ -43,7 +43,7 @@
                 <div class="flex justify-center items-center">
                     <div class="w-auto bg-orange-FF7F09 py-1.5 px-2 rounded-lg shadow shadow-white">
                         <h2 class="md:text-2xl text-lg font-sans font-semibold text-center text-white">
-                            Form Input Materi
+                            Form Edit Materi
                         </h2>
                     </div>                    
                 </div>                      
@@ -52,21 +52,21 @@
                             
                     @include('errors.message')
 
-                    <form class="py-3 font-roboto px-5" method="POST" action="{{ url('/guru/materi/materi_add') }}" onsubmit="return confirmSubmit()" enctype="multipart/form-data">
+                    <form class="py-3 font-roboto px-5" method="POST" action="/guru/materi/materi_update/{{$edit->id}}" onsubmit="return confirmSubmit()" enctype="multipart/form-data">
                         
                         @csrf
 
                         <div class="relative z-0 w-full mb-6 group">
-                            <input type="text" name="materi" id="materi" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 text-white border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:broder-blue-56A5ED peer" value="{{ old('materi') }}" required />
+                            <input type="text" name="materi" id="materi" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 text-white border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:broder-blue-56A5ED peer" value="{{ old('materi', $edit->materi) }}" />
                             <label for="materi" class="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-56A5ED peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Materi</label>
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="isi" class="peer-focus:font-medium absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -mt-2 origin-[0] peer-focus:left-0 peer-focus:text-blue-56A5ED peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Isi</label>
-                            <textarea type="text" name="isi" id="isi" class="ckeditor block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 text-white border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:broder-blue-56A5ED peer opacity-70"  required > {!! old('isi') !!} </textarea>
+                            <textarea type="text" name="isi" id="isi" class="ckeditor block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 text-white border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:broder-blue-56A5ED peer opacity-70"> {{ old('isi', $edit->isi) }} </textarea>
                         </div> 
                         <div class="relative z-0 w-full mb-6 group">
                             <p class="font-normal py-2 md:text-start text-red-600">
-                                *opsional tidak harus dengan gambar
+                                *opsional
                             </p>
                             <label class="block mb-2 text-sm font-medium text-white" for="gambar">Upload Image</label>
                             <input class="block w-full text-sm text-white border-0 border-b-2 border-gray-300 rounded-lg cursor-pointer focus:outline-none" id="gambar" name="gambar" type="file">
@@ -79,6 +79,7 @@
                             Upload
                         </button>
                     </form>
+
                 </div>                
                 <div class="flex justify-between items-center">
                     <a href="{{ url('/guru/materi') }}" class="group relative flex w-auto justify-center rounded-full hover:opacity-80">

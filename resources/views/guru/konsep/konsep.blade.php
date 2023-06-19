@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset ('img/brain.png') }}">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <title>Konsep | Dashboard Guru</title>
 </head>
 
@@ -61,6 +62,7 @@
                                     <th class="px-4 py-3">Materi</th>
                                     <th class="px-4 py-3">Soal</th>
                                     <th class="px-4 py-3">Tanggal</th>
+                                    <th class="px-4 py-3"></th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white-fafafa divide-y">
@@ -89,6 +91,14 @@
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         {{ $row->created_at }}
+                                    </td>
+                                    <td class="px-4 py-3 text-sm">
+                                        <a href="/guru/konsep/konsep_edit/{{$row->id}}" class="bg-red-200 px-2 py-2 rounded-lg hover:opacity-70" onclick="return confirm('Apakah anda yakin ingin mengubah data ?');">
+                                            <i class="fi fi-rr-file-edit"></i>
+                                        </a>
+                                        <a href="/guru/konsep/konsep_delete/{{$row->id}}" class="bg-red-200 px-2 py-2 rounded-lg hover:opacity-70" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');">
+                                            <i class="fi fi-rr-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 
