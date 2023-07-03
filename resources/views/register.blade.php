@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset ('img/brain.png') }}">
-    <title>Register | Computer Thinking</title>
+    <title>Register | Computational Thinking</title>
 </head>
 
 <body class="bg-gradient-to-r from-blue-2F308B to-blue-1F4B9D">
@@ -20,10 +20,9 @@
             <div>
                 <div class="flex flex-row justify-center">
                     <img src={{asset('img/brain.png')}} alt="logo" class="h-20 mx-auto">
-                    <img src={{asset('img/gtax.png')}} alt="logo" class="h-20 mx-auto">
                 </div>
                 <h2 class="py-5 text-center text-3xl font-roboto font-bold tracking-tight text-white">
-                    Mengenal Computer Thinking
+                    Mengenal Computational Thinking
                 </h2>
                 <p class="text-center text-xl font-roboto tracking-tight text-white">
                     Register
@@ -46,14 +45,14 @@
                         <label for="email" class="sr-only">Email</label>
                         <input id="email" name="email" type="email" required class="relative block w-full border-0 py-1.5 text-black-1E1E1E ring-1 ring-inset placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 px-3" value="{{ old('email') }}" placeholder="Email">
                     </div>
-                    <p class="font-normal py-2 text-sm md:text-start text-red-500">
-                        *Default : 'guru' for Teacher Account <br>
-                        *Default : 'siswa' fo Student Account
-                    </p>
-                    <div>
-                        <label for="role" class="sr-only">Role</label>
-                        <input id="role" name="role" type="text" required class="relative block w-full border-0 py-1.5 text-black-1E1E1E ring-1 ring-inset placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 px-3" value="{{ old('role') }}" placeholder="Role">
-                    </div>  
+                    <!--<p class="font-normal py-2 text-sm md:text-start text-red-500">-->
+                    <!--    *Default : 'guru' for Teacher Account <br>-->
+                    <!--    *Default : 'siswa' fo Student Account-->
+                    <!--</p>-->
+                    <!--<div>-->
+                    <!--    <label for="role" class="sr-only">Role</label>-->
+                    <!--    <input id="role" name="role" type="text" required class="relative block w-full border-0 py-1.5 text-black-1E1E1E ring-1 ring-inset placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 px-3" value="{{ old('role') }}" placeholder="Role">-->
+                    <!--</div>  -->
                     <p class="font-normal py-2 text-sm md:text-start text-red-500">
                         *The password field must be at least 8 characters
                     </p>

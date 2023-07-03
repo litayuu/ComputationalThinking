@@ -42,7 +42,6 @@
             <div>
                 <div class="flex flex-row justify-center">
                     <img src={{asset('img/brain.png')}} alt="logo" class="h-20 mx-auto">
-                    <img src={{asset('img/gtax.png')}} alt="logo" class="h-20 mx-auto">
                 </div>
                 <div class="pt-5">
                     <h2 class="pb-1 text-center text-4xl font-sans font-bold tracking-widest text-white uppercase">

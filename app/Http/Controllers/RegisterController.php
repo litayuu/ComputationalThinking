@@ -13,10 +13,16 @@ class RegisterController extends Controller
     }
 
     public function register(RegisterRequest $request) {
-        $user = User::create($request->validated());
+        // $user = User::create($request->validated());
+        $user = User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' =>$request->password,
+            'role' => 'siswa',
+        ]);
         auth()->login($user);
         Session()->flash('alert-success', 'Data berhasil disimpan');
         return redirect('/register');
-        // return redirect('/register')->with('success', "Account successfully registered.");
     }
 }

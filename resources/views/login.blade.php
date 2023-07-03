@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset ('img/brain.png') }}">
-    <title>Login | Computer Thinking</title>
+    <title>Login | Computational Thinking</title>
 </head>
 
 <body class="bg-gradient-to-r from-blue-2F308B to-blue-1F4B9D">
@@ -20,10 +20,9 @@
             <div>
                 <div class="flex flex-row justify-center">
                     <img src={{asset('img/brain.png')}} alt="logo" class="h-20 mx-auto">
-                    <img src={{asset('img/gtax.png')}} alt="logo" class="h-20 mx-auto">
                 </div>
                 <h2 class="py-5 text-center text-3xl font-roboto font-bold tracking-tight text-white">
-                    Mengenal Computer Thinking
+                    Mengenal Computational Thinking
                 </h2>
                 <p class="text-center text-xl font-roboto tracking-tight text-white">
                     Login

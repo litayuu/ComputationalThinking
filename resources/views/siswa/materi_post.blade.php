@@ -46,7 +46,7 @@
                             {{ $post->materi }}
                         </h2>
                     </div>
-                    <img class="w-auto h-auto items-center justify-center" src="{{ asset ('storage/'.$post->gambar) }}" alt="{{ $post->gambar }}" title="{{ $post->materi }}">
+                    <img class="w-auto h-auto items-center justify-center" src="{{ asset('/materi/'.$post-> gambar) }}" alt="{{ $post->gambar }}" title="{{ $post->materi }}">
                      <div class="md:px-6 px-1 py-2 font-sans text-white md:text-left text-center">
                         <p class="text-lg py-2">
                             {!! $post->isi !!}
