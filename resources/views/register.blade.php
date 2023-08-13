@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset ('img/brain.png') }}">
     <title>Register | Computational Thinking</title>
+    {!! RecaptchaV3::initJs() !!}
 </head>
 
 <body class="bg-gradient-to-r from-blue-2F308B to-blue-1F4B9D">

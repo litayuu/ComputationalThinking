@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 
 class AuthController extends Controller
 {
@@ -19,6 +20,7 @@ class AuthController extends Controller
             [
                 'username' => 'required',
                 'password' => 'required',
+                // 'g-recaptcha-response' => 'required|recaptchav3:proses_login,0.5'
             ]);
 
         $credentials = $request->only('username','password');

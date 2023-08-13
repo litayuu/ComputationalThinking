@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
     <link rel="icon" href="{{ asset ('img/brain.png') }}">
     <title>Login | Computational Thinking</title>
+    {!! RecaptchaV3::initJs() !!}
 </head>
 
 <body class="bg-gradient-to-r from-blue-2F308B to-blue-1F4B9D">
@@ -42,6 +43,8 @@
                         <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full rounded-b-md border-0 py-1.5 text-black-1E1E1E ring-1 ring-inset placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 px-3" placeholder="Password">
                     </div>
                 </div>
+                {!! RecaptchaV3::field('proses_login') !!}
+
                 <div>
                     <button type="submit" class="group relative flex w-full justify-center rounded-md bg-orange-FF7F09 px-3 py-2 text-sm font-semibold text-white hover:bg-white hover:text-orange-FF7F09 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 shadow shadow-orange-600 hover:shadow-white">
                         Sign in
@@ -53,7 +56,7 @@
                 <p class="text-center text-base tracking-tight text-white">
                     Belum memiliki akun ? 
                     <a href="{{ url('/register') }}" class="text-base text-orange-FF7F09 hover:opacity-70">
-                        daftar sekarang
+                        Daftar Sekarang
                     </a>          
                 </p>
             </div>
